@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<hibernate-configuration>
+	<session-factory>
+		<!-- Database connection settings -->
+		<property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/raeeshjada?useSSL=false&amp;allowPublicKeyRetrieval=true&amp;serverTimezone=UTC
+		</property>
+		<property name="hibernate.connection.username">root</property>
+		<property name="hibernate.connection.password">jahid7400!@#</property>
+
+		<!-- Connection pool settings (HikariCP) -->
+		<property name="hibernate.hikari.minimumIdle">5</property>
+		<property name="hibernate.hikari.maximumPoolSize">20</property>
+		<property name="hibernate.hikari.idleTimeout">300000</property>
+
+		<!-- Hibernate settings -->
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+		<property name="hibernate.show_sql">true</property>
+		<property name="hibernate.format_sql">true</property>
+		<property name="hibernate.hbm2ddl.auto">update</property>
+
+		<!-- Enable Hibernate Validator -->
+		<property name="hibernate.validator.apply_to_ddl">true</property>
+		<property name="hibernate.validator.autoregister_listeners">true</property>
+
+		<!-- Mapping classes -->
+		<mapping class="com.rj.entity.User" />
+		<mapping class="com.rj.entity.Wallet" />
+		<mapping class="com.rj.entity.BankDetails"/>
+		<mapping class="com.rj.entity.WithdrawalHistory"/>
+		<mapping class="com.rj.entity.Bet"/>
+
+	</session-factory>
+</hibernate-configuration>
